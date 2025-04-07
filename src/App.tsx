@@ -10,6 +10,7 @@ function App() {
      <SearchBar/>
       <VillageList/>
       <Footer/>
+
     </>
   );
 }
