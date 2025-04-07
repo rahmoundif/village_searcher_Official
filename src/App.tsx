@@ -1,7 +1,8 @@
 import {useState } from "react";
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
-import NavBar from "./components/NavBar";
+import { Header } from "./components/Header";
+
 
 const pokemonList = [
   {
@@ -73,7 +74,7 @@ function App() {
   }
   return (
     <>
-      <NavBar setPokemonName={setPokemonName} pokemonList={pokemonList} />
+      <Header setPokemonName={setPokemonName} pokemonList={pokemonList} />
       <PokemonCard pokemon={pokemon} />
     </>
   );
