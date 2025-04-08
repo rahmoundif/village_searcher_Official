@@ -14,12 +14,13 @@ function VillageItem({cityName, imgSrc, Demography, Superficie, FunFact} : Villa
 
     return ( 
         <>
-        <section className="flex flex-col items-center" >
-            <h1 className="font-bold p-2 " >{cityName}</h1>
-            <img src={imgSrc} alt="Village" className="w-80 h-60 p-1" />
+        <section className="flex flex-col items-center pt-8 pb-8 lg:w-full" >
+            <h1 className="font-bold p-2 " ><span className="text-[#D55B3E]">{cityName[0]}</span>{cityName.slice(1)}</h1>
+            <img src={imgSrc} alt="Village" className="w-80 h-60 rounded-2xl border-2 hover:scale-90 ease-in-out duration-300 lg:w-auto lg:h-90 " />
             <p className="font-bold p-2 " >{Demography}</p>
             <p className="font-bold p-1 " >{Superficie}</p>
-            <p className="italic p-1 m-2" >{FunFact}</p>
+            <p className="italic p-4 text-center lg:mr-155 lg:ml-155" >{FunFact}</p>
+            
         </section>
         </>
      );
