@@ -105,7 +105,7 @@ const VillageList = () => {
   return (
     <div>
       <input
-        className="mt-7 border-4 border-[#4A90BA] rounded-2xl py-1 px-5 focus:border-4"
+        className="mt-7 border-4 border-[#4A90BA] rounded-2xl py-1 mb-6 px-5 focus:border-4"
         type="text"
         placeholder="Rechercher"
         value={searchBar}
