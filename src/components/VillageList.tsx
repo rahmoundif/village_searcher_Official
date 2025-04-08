@@ -112,7 +112,8 @@ const VillageList = () => {
         onChange={handleSearch}
       />
       <ul>
-        {resultats.map(
+        {resultats.length > 0 ? (
+        resultats.map(
           ({ cityName, imgSrc, Demography, Superficie, FunFact }) => (
             <li>
               <VillageItem
@@ -124,7 +125,12 @@ const VillageList = () => {
               />
             </li>
           )
-        )}
+        )
+      ): (
+      
+      <p className="mt-50 h-100 text-5xl lg:text-5xl">Try Again 😜</p>
+
+      )}
       </ul>
     </div>
   );
