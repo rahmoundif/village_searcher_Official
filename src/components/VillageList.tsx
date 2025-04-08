@@ -1,7 +1,17 @@
 import VillageItem from './VillageItem';
+import { useState } from 'react';
 
-function VillageList() {
-const villageItems = [
+interface VillageInterface {
+  id: number;
+  cityName: string;
+  imgSrc: string;
+  Demography: string;
+  Superficie: string;
+  FunFact: string;
+}
+
+const VillageList = () => {
+const villageItems: VillageInterface[] = [
   {
     id:1,
     cityName: "Marseille",
@@ -66,22 +76,53 @@ const villageItems = [
     FunFact:"Lille a été fondée au XIe siècle par le comte de Flandre, Baudouin V, comme ville forteresse pour se protéger des envahisseurs normands.",
   },
 ];
+
+const [searchBar, setSearchBar] = useState('');
+const [resultats, setResultats] = useState(villageItems)
+
+const handleSearch = (e) => {
+  const village = e.target.value;
+  setSearchBar(village);
+
+  if (village === '') {
+    setResultats(villageItems);
+
+  }else{
+    setResultats (
+      villageItems.filter((e)=>
+        e.cityName.toLowerCase().includes(village.toLowerCase())
+    ));
+    
+  }
+} 
   
     return (
-      <>
-        {villageItems.map(
-          ({ id, cityName, imgSrc, Demography, Superficie, FunFact}) => (
-            <VillageItem
-              id={id}
-              cityName={cityName}
-              imgSrc={imgSrc}
-              Demography={Demography}
-              Superficie={Superficie}
-              FunFact={FunFact}
-            />
-          )
-        )}
-      </>
+      <div>
+        <input
+        type="text"
+        placeholder="Rechercher"
+        value={searchBar}
+        onChange={handleSearch}
+        />
+<ul>
+{resultats.map(({cityName, imgSrc, Demography, Superficie, FunFact}) => (
+  <li>
+    <VillageItem
+    cityName={cityName}
+    imgSrc={imgSrc}
+    Demography={Demography}
+    Superficie={Superficie}
+    FunFact={FunFact}/>
+  </li>
+)
+          )}
+</ul>
+
+         </div>
+
+        
+        
+     
     );
   }
   

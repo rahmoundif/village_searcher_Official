@@ -1,16 +1,15 @@
 import "./App.css";
-import { SearchBar } from "./components/SearchBar";
 import { Footer } from "./components/Footer";
 import VillageList from "./components/VillageList";
-
+import {Header} from "./components/Header";
 
 function App() {
   return (
     <>
-     <SearchBar/>
-      <VillageList/>
-      <Footer/>
-
+    <Header/>
+    <VillageList/>
+    <Footer/>
+      
     </>
   );
 }
