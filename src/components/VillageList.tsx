@@ -87,7 +87,7 @@ const VillageList = () => {
   const [searchBar, setSearchBar] = useState("");
   const [resultats, setResultats] = useState(villageItems);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const village = e.target.value;
     setSearchBar(village);
 
@@ -114,8 +114,8 @@ const VillageList = () => {
       <ul>
         {resultats.length > 0 ? (
         resultats.map(
-          ({ cityName, imgSrc, Demography, Superficie, FunFact }) => (
-            <li>
+          ({ id, cityName, imgSrc, Demography, Superficie, FunFact }) => (
+            <li key={id}>
               <VillageItem
                 cityName={cityName}
                 imgSrc={imgSrc}
