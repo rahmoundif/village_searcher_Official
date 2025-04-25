@@ -1,7 +1,7 @@
 import "./App.css";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import VillageList from "./components/VillageList";
-import {Header} from "./components/Header";
+import Header from "./components/Header";
 
 function App() {
   return (
